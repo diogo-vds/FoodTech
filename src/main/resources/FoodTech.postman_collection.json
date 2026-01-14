@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "2d3edc94-f733-4480-9b3d-3ce2db1aa210",
+		"name": "FoodTech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "46853938",
+		"_collection_link": "https://lbarros-8972533.postman.co/workspace/LBarros's-Workspace~1aa84ef8-4633-4367-83d9-4df4dfce719d/collection/46853938-2d3edc94-f733-4480-9b3d-3ce2db1aa210?action=share&source=collection_link&creator=46853938"
+	},
+	"item": [
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "GET usuarios - nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/usuarios?nome=jo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"usuarios"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "jo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET usuarios - lista",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/v1/usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "GET usuario - id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Roberto Oliveiro Junior\",\r\n    \"email\": \"roberto@gmail.com\",\r\n    \"login\": \"roberto02\",\r\n    \"senha\": \"pass1212\",\r\n    \"logradouro\": \"Rua XV de Novembro\",\r\n    \"numero\": 10,\r\n    \"bairro\": \"Centro\",\r\n    \"cidade\": \"Rio de Janeiro\",\r\n    \"uf\": \"RJ\",\r\n    \"cep\": \"80110455\",\r\n    \"tipoUsuario\": \"DONO\"\r\n}"
+						},
+						"url": "http://localhost:8080/v1/usuarios/2"
+					},
+					"response": []
+				},
+				{
+					"name": "POST usuarios - cadastro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Roberto Oliveira Junior\",\r\n    \"login\": \"roberto02\",\r\n    \"email\": \"roberto_junior@gmail.com\",\r\n    \"uf\" : \"11\",\r\n    \"bairro\": \"Centro\",\r\n    \"cidade\" : \"Curitba\",\r\n    \"senha\" : 123456,\r\n    \"numero\" : 405,\r\n    \"logradouro\": \"Rua XV de Novembro\",\r\n    \"cep\": 80110455,\r\n    \"tipoUsuario\" : \"CLIENTE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/v1/usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "POST usuarios - Cadastro Validação Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Roberto Oliveira Junior\",\r\n    \"login\": \"roberto02\",\r\n    \"email\": \"roberto_junior@gmail.com\",\r\n    \"uf\" : \"11\",\r\n    \"bairro\": \"Centro\",\r\n    \"cidade\" : \"Curitba\",\r\n    \"senha\" : 123456,\r\n    \"numero\" : 405,\r\n    \"logradouro\": \"Rua XV de Novembro\",\r\n    \"cep\": 80110455,\r\n    \"tipoUsuario\" : \"CLIENTE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/v1/usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "POST usuarios - cadastro erro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"\",\r\n  \"email\": \"abc\",\r\n  \"login\": \"\",\r\n  \"senha\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/v1/usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT usuario - atualização",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Roberto Oliveiro Junior\",\r\n    \"email\": \"roberto@gmail.com\",\r\n    \"login\": \"roberto02\",\r\n    \"senha\": \"pass1212\",\r\n    \"logradouro\": \"Rua XV de Novembro\",\r\n    \"numero\": 10,\r\n    \"bairro\": \"Centro\",\r\n    \"cidade\": \"Rio de Janeiro\",\r\n    \"uf\": \"RJ\",\r\n    \"cep\": \"80110455\",\r\n    \"tipoUsuario\": \"DONO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/v1/usuarios/1"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:8080/v1/usuarios/56"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Senhas",
+			"item": [
+				{
+					"name": "PUT senhas",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"usuarioId\": \"1\",\r\n  \"senhaAntiga\": \"pass0101\",\r\n  \"novaSenha\": \"P@ss0101\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/v1/senhas"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Outh",
+			"item": [
+				{
+					"name": "Autenticação",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"joao01\",\r\n    \"senha\": \"pass010\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/v1/auth/login"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
