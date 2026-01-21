@@ -1,0 +1,327 @@
+{
+  "info": {
+    "_postman_id": "8dce1a14-8afc-486a-b03a-650a5de9d3cc",
+    "name": "PosTech",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "6824314"
+  },
+  "item": [
+    {
+      "name": "Salvar-Usuario",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Jose antonio\",\r\n  \"email\": \"jose.antonio@exemplo.com\",\r\n  \"login\": \"jose.antonio\",\r\n  \"senha\": \"senha123\",\r\n  \"logradouro\": \"Rua das Flores\",\r\n  \"numero\": 123,\r\n  \"bairro\": \"Centro\",\r\n  \"cidade\": \"São Paulo\",\r\n  \"uf\": \"SP\",\r\n  \"cep\": \"12345678\",\r\n  \"tipoUsuario\": \"CLIENTE\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Salvar-Usuario-Email-Ja-Existe",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Jose antonio\",\r\n  \"email\": \"jose.antonio@exemplo.com\",\r\n  \"login\": \"jose.antonio\",\r\n  \"senha\": \"senha123\",\r\n  \"logradouro\": \"Rua das Flores\",\r\n  \"numero\": 123,\r\n  \"bairro\": \"Centro\",\r\n  \"cidade\": \"São Paulo\",\r\n  \"uf\": \"SP\",\r\n  \"cep\": \"12345678\",\r\n  \"tipoUsuario\": \"CLIENTE\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/v1/usuarios",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar-Por-Nome",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"João da Silva\",\r\n  \"email\": \"joao.silva@exemplo.com\",\r\n  \"login\": \"joao.silva\",\r\n  \"senha\": \"senha123\",\r\n  \"logradouro\": \"Rua das Flores\",\r\n  \"numero\": 123,\r\n  \"bairro\": \"Centro\",\r\n  \"cidade\": \"São Paulo\",\r\n  \"uf\": \"SP\",\r\n  \"cep\": \"12345678\",\r\n  \"tipoUsuario\": \"CLIENTE\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/usuarios?nome=João%da%Silva",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "usuarios"
+          ],
+          "query": [
+            {
+              "key": "nome",
+              "value": "João%da%Silva"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar-Por-Nome-Nao-Existe",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"João da Silva\",\r\n  \"email\": \"joao.silva@exemplo.com\",\r\n  \"login\": \"joao.silva\",\r\n  \"senha\": \"senha123\",\r\n  \"logradouro\": \"Rua das Flores\",\r\n  \"numero\": 123,\r\n  \"bairro\": \"Centro\",\r\n  \"cidade\": \"São Paulo\",\r\n  \"uf\": \"SP\",\r\n  \"cep\": \"12345678\",\r\n  \"tipoUsuario\": \"CLIENTE\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/usuarios?nome=Joao",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "usuarios"
+          ],
+          "query": [
+            {
+              "key": "nome",
+              "value": "Joao"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"login\":\"jose.antonio\",\r\n    \"senha\":\"senha123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login-Invalido",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"login\":\"jose.antonio\",\r\n    \"senha\":\"senha123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "alterar-senha",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"usuarioId\": 1,\r\n    \"senhaAntiga\":\"senha123\",\r\n    \"novaSenha\":\"Senha1234@\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/senhas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "senhas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "alterar-senha-fora-padrao",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"usuarioId\": 1,\r\n    \"senhaAntiga\":\"senha123\",\r\n    \"novaSenha\":\"Senha1234@\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/senhas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "senhas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Alterar-Usuario",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"João da Silva Put Alteracao\",\r\n  \"email\": \"joao.silva@exemplo.com\",\r\n  \"login\": \"joao.silva\",\r\n  \"senha\": \"senha123\",\r\n  \"logradouro\": \"Rua das Flores 2\",\r\n  \"numero\": 1234,\r\n  \"bairro\": \"Centro 2\",\r\n  \"cidade\": \"São Paulo\",\r\n  \"uf\": \"SP\",\r\n  \"cep\": \"12345679\",\r\n  \"tipoUsuario\": \"CLIENTE\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/usuarios/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "usuarios",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Deletar-Usuario",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"João da Silva\",\r\n  \"email\": \"joao.silva@exemplo.com\",\r\n  \"login\": \"joao.silva\",\r\n  \"senha\": \"senha123\",\r\n  \"logradouro\": \"Rua das Flores\",\r\n  \"numero\": 123,\r\n  \"bairro\": \"Centro\",\r\n  \"cidade\": \"São Paulo\",\r\n  \"uf\": \"SP\",\r\n  \"cep\": \"12345678\",\r\n  \"tipoUsuario\": \"CLIENTE\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/usuarios/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "usuarios",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
